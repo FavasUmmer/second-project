@@ -1,4 +1,4 @@
-import { cart } from '../data/cart.js';
+import { cart,addToCart } from '../data/cart.js';
 import { products } from '../data/products.js';
 let productsHTML='';
 products.forEach((product)=>{
@@ -64,27 +64,8 @@ button.addEventListener('click',() => {
        }
     });
     let valueselectBox=parseInt(selectBox.value)
- 
 
-    if(valueselectBox>1){
-      if(machingItem){
-        machingItem.quantity +=valueselectBox;
-      }else{
-        cart.push({
-          productId:buttenId,
-          quantity:valueselectBox
-        });
-      }
-    }else{    
-        if(machingItem){
-          machingItem.quantity +=1;
-        }else{
-          cart.push({
-            productId:buttenId,
-            quantity:1
-          });
-        }
-    }
+      addToCart(valueselectBox,machingItem,buttenId)
     let added =  button.previousElementSibling;
     added.style.opacity = 5;
     setTimeout(() => {
