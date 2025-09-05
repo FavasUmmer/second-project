@@ -1,4 +1,5 @@
-
+import { cart } from '../data/cart.js';
+import { products } from '../data/products.js';
 let productsHTML='';
 products.forEach((product)=>{
 productsHTML +=` <div class="product-container">
@@ -62,7 +63,7 @@ button.addEventListener('click',() => {
         machingItem=item;
        }
     });
-    valueselectBox=parseInt(selectBox.value)
+    let valueselectBox=parseInt(selectBox.value)
  
 
     if(valueselectBox>1){
