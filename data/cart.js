@@ -51,3 +51,6 @@ function saveToStorage(){
       cart=newCart;
       saveToStorage();
     }
+    function updateDeliverOption(productId,deliveryOption){
+      
+    }
